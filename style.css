@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+body {
+    background: #B8E0D2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Game Container */
+.game-box {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Heading */
+.game-box h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    color: #263238;
+}
+
+.game-box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    background: #177CE5;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Game Grid */
+#gamecells {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 5px;
+    width: fit-content;
+    margin: 0 auto 25px;
+}
+
+/* Individual Cells */
+.cell {
+    width: 80px;
+    height: 80px;
+    background: #F2F9F6;
+    border: 2px solid #8BBEAD;
+    border-radius: 8px;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 76px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cell:hover {
+    background: #DFF1EA;
+}
+
+/* Game Information */
+#gameinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#gameStatus {
+    font-size: 20px;
+    font-weight: 600;
+    color: #263238;
+}
+
+/* Reset Button */
+#reset {
+    background: #B8E0D2;
+    color: #263238;
+    border: 1px solid #177CE5;
+    border-radius: 25px;
+    width: 150px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#reset:hover {
+    background: #16a8b8;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .game-box {
+        padding: 25px 15px;
+    }
+
+    .game-box h2 {
+        font-size: 27px;
+    }
+
+    #gamecells {
+        grid-template-columns: repeat(3, 70px);
+        grid-template-rows: repeat(3, 70px);
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 45px;
+        line-height: 66px;
+    }
+
+    #gameStatus {
+        font-size: 18px;
+    }
+}
